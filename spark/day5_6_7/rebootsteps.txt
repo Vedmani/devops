@@ -1,0 +1,15 @@
+if hdfs services are not running properly then perform the following activities 
+in sequence:
+1. stop all hadoop services 
+2. cd /tmp/hadoop-talentum/dfs 
+3. ls -lh you will get 3 folders: name, data & namesecondary
+4. delete 'current' folder from each of the above folders
+5. come to home folder and format namenode by giving `hdfs namenode -format` command
+6. start hadoop services in sequence 
+7. create home folder on hdfs using: hdfs dfs -mkdir -p /user/talentum
+8. create hive warehouse using: hdfs dfs -mkdir -p /user/hive/warehouse
+9. Start hive metastore
+10. hdfs dfs -ls -R /user
+drwxr-xr-x   - talentum supergroup          0 2024-01-01 19:55 /user/hive
+drwxr-xr-x   - talentum supergroup          0 2024-01-01 19:55 /user/hive/warehouse
+drwxr-xr-x   - talentum supergroup          0 2024-01-01 19:52 /user/talentum

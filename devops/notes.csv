@@ -1,0 +1,95 @@
+Cammanda , Cammand_use
+=========================*Docker*==================================================================,==============*Docker-Commands*===========================
+sudo apt install docker.io, install decker in ubuntu
+sudo systemctl start docker, start docker service
+sudo systemctl status docker, check the status of the docker service
+sudo docker images, shows all avilable images in local repo
+sudo docker ps, shows all running containers
+sudo docker ps -a, shows all containers
+sudo docker network ls, shows all networks
+sudo docker network create <Network name>, create new network
+sudo docker commit -t <cantainer name> <image name>:<tag>, create new image from container
+sudo docker commit build -t <Image name> <Dockerfile location>, create new image from Dockerfile
+sudo docker pull <image name>, download new image from DockerHub
+sudo docker run <image name>, starts new container from image
+sudo docker run --name <cantainer name> <image name>, starts new container from image with the specified name
+sudo docker run --rm <image name>, start a new conatiner and deletes it when it is stopped
+sudo docker run -ti <image name>, start a new conatiner and gives root access
+sudo docker run -p <system port>:<conatiner port> <image name>, start a new conatiner and maps the internal port with local machine port
+sudo docker run -v <system Volume>:<conatiner Volume> <image name>, start a new conatiner and maps the internal dir with local machine dir 
+sudo docker run -d <image name>, start a new conatiner and lets it run in dittached mode
+sudo docker run -e <image name>, start a new conatiner and sets value to the environment variable inside the container
+sudo docker run --network <network Name>, start a new conatiner and connects to the network
+sudo docker stop <cantainer name>, stops the conatiner
+sudo docker start <cantainer name>, starts the stopped container
+sudo docker start <cantainer name> -i , starts the stopped container and gives the terminal
+sudo docker rm <cantainer name> , deletes the stopped container
+sudo docker rmi <cantainer Image id>, deletes the image
+sudo docker inspect <cantainer name>, shows the network info of the running cantainer
+sudo docker tag <cantainer name > <username/imagename> , renames the container
+sudo docker push <username/imagename>, uploads the conatainer to the DockerHub
+sudo docker save <container name> > <tar file name>, saves the images to the tar file
+sudo docker load < <tar file name>, loads the images from the tar file
+sudo docker-compose up, starts cantainers from the yaml file
+sudo docker-compose stop, stops cantainers from the yaml file
+sudo docker-compose down, delets cantainers from the yaml file
+=========================*Kubernetes*==============================================================,==============*Kubernetes-Commands*===========================
+kubectl cluster-info, shows the information of the cluster
+kubectl get nodes, show the info of the nodes
+kubectl get nodes -o wide, shows the detailed info of the nodes
+kubectl get pods , shows the running pods
+kubectl get pods --all-namespaces, shows the all pods
+kubectl create deployment <name of deployment> --image=<Image Name> --port=<container exposed port>, creates new deployment
+kubectl delete deployment <name of deployment>, deletes deployment
+kubectl expose deployment <name of deployment> --type=<NodeName / ClusterIP / LoadBalancer>, create the service and expose it to outside wrold
+kubectl delete service <name of deployment>, deletes service
+kubectl get service , shows all existing services
+kubectl scale deployment <deployment Name> --replicas=<number of container if needed> , scale the size of the cluster
+minikube service <deployment Name> --url , show the ip the deployment is running
+=========================*GIT*=====================================================================,==============*GIT-Commands*===========================
+git init, create new repo in loc machine
+git branch, shows branch
+git branch -a, shows all branch
+git branch <branch name> , creates new branch
+git branch -d <branch name> , delete branch
+git branch -m <old branch name> <new branch name> , rename branch name
+git status, shows the status of the repo
+git add -A, add file to staging area
+git rm --cached <file name>, remove file from staging area
+git config --global user.name <user name> , sets the user Name for github
+git config --global user.Email <user Email> , sets the user Email for github
+git restore --staged <file name> , restores the file from stagging area
+git log , shows the commit logs
+git revert <Commit ID>, reverts the changes from commit of specified commit id
+git checkout <branch name> , Moves branch
+git checkout <branch name> -b , create new branch and move to the branch
+git merge <branch name> , merges the specified branch into the current branch
+git rebase <branch name>, rebase the specified branch into the current branch
+git show <Comment ID> , shows what is the commit in detailed
+git show --pretty="" --name-only <Comment ID> , shows what is the commit
+git clone <repo url> , clones the repo from github
+git push origin main <branch name> , upload data to github 
+git pull , gets new updates
+git remote add origin "URL", adds new remote
+git commit --ammend, allows to edit last commit massage
+=========================*Jenkins*=================================================================,==============*Jenkins-Commands*===========================
+sudo apt install openjdk-17-jre-headless -y, installs java 17
+java -jar jenkins.war, starts the jenkins GUI on port 8080
+=========================*AWS*=====================================================================,==============*AWS-Commands*===========================
+username Puneet681
+password Puneet@5433
+-------------------------*EC2*---------------------------------------------------------------------,--------------*EC2-Commands*---------------------------
+ssh -t <.pem file> ubuntu@<ip of EC2> , allows you to get terminal of EC2 machine
+scp -i <.pem file> <Location of file in loca machine> ubuntu@<ip of EC2>:<location in EC2>, copy the file from local Machine to EC2
+=========================*Linux*===================================================================,==============*Linux-Commands*===========================
+sudo mount -t auto <File system to  mount> <file system to mount on>, mount the file system 
+fdisk -load , shows all mount devices
+mount , show all mount
+cat /var/log/syslog , reads the text in the file
+cat /var/log/syslog | grep <text to find> , reads the text with the filter
+tail <file name> , show last 10 lines
+head <file name> , show frist 10 lines
+sudo df -khT , show space remained in all mount devices
+sudo chmod <premissions> <file name> , change the permission of the file
+sudo chown <premissions> <file name> , change the ownership of the file 
+sudo chgrp <premissions> <file name> , chnage the owner group of the file

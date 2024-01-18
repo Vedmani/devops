@@ -1,0 +1,16 @@
+version: '3'
+services:
+  dbsvr:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 'password'
+  Web1:
+    image: httpd
+    ports:
+      - 7600:80
+  web2:
+    image: nginx
+    ports:
+      - 9000:80
+    expose:
+      - 8100
